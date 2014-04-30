@@ -9,28 +9,28 @@ Author: RJ Ramey
 
 No license is granted at this time. Stay tuned.
 
-## Inputs
+### Inputs
 
 This code contains a series of functions that operate on inputs in location /data/raw/ :
 
 - csv files from company's internal SQL query results  (These do not appear in this repository)
 
-## data_cleaner()
+### data_cleaner()
 - reads csvs and encodes feature names
 - enforces data types: converts int to float, boolean to binary, times as strings to datetime64
 - drops unnecessary features
 - **Output :** clean and coded *filename*.csv in /data/cleaned/
 
-## feature_engineer()
+### feature_engineer()
 - creates 20-45 derived measurements from tables of cleaned data
 - **Output :** *filename*_measure.csv with calculated measurements indexed by Id in /data/cleaned/
 
-## feature_visualizer()
+### feature_visualizer()
 - **Output :** histogram plots to /data/vis/ 
 
-## data_normalizer()
+### data_normalizer()
 - **Output :** *filename_measure*_norm.csv for measurements csvs in /data/cleaned/
 
-## run_cluster()
-- assembles outputs: JOIN tables on Id to each filename_measure*_norm.csv
+### run_cluster()
+- assembles outputs: JOIN tables on Id to each *filename_measure*_norm.csv
 - performs KMeans clustering
